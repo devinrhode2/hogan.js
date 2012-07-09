@@ -5,6 +5,10 @@
 on Mustache, see the [manpage](http://mustache.github.com/mustache.5.html) and
 the [spec](https://github.com/mustache/spec).
 
+##About this fork
+
+Throwing [this idea]https://gist.github.com/3072669 out there!! Go read the idea.
+
 ## Basics
 
 Hogan compiles templates to HoganTemplate objects, which have a render method.
