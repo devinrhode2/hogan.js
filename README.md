@@ -25,6 +25,142 @@ var output = template.render(data);
 console.log(output);
 ```
 
+
+
+<style type="text/css">
+    p.p3 { font-family: 12.0px Menlo; color: #c70000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; min-height: 14.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Menlo; color: #c70000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Menlo}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Helvetica}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Menlo; min-height: 14.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #bc2e00}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo}
+    span.s1 {font: 12.0px Menlo}
+    span.s2 {font: 12.0px Consolas; color: #c70000}
+    span.s3 {font: 12.0px Helvetica; color: #000000}
+    span.s4 {color: #000000}
+    span.s5 {color: #f90000}
+    span.s6 {color: #c70000}
+    span.s7 {text-decoration: underline}
+    span.s8 {font: 12.0px Menlo; color: #c70000}
+    span.s9 {text-decoration: underline ; color: #000000}
+    span.s10 {font: 12.0px Menlo; text-decoration: underline}
+    span.s11 {font: 12.0px Helvetica}
+  </style>
+You should have <span class="s1">ruby 1.9.2, rails 3.2.2, and gem</span>
+installed and setup.
+
+  
+
+You may need to update rails with: <span class="s2">gem update
+rails</span>
+
+  
+
+**clone** down the github repo
+
+**cd** into the project directory
+
+to install various gems with the project, run:
+
+<span class="s3">\$ </span>bundle install
+
+  
+
+-Download and run the Postgres installer from the official site at
+[http://www.enterprisedb.com/products-services-training/pgdownload][]<span class="Apple-converted-space"> </span>
+
+During installation, use your standard system
+password.<span class="Apple-converted-space"> </span>
+
+I renamed my install directory to /usr/local/pgsql and the data source
+to /usr/local/pgsql/data2. These steps probably aren’t necessary.
+Otherwise, stick with all the defaults. At the end there may be
+something about another install stack thing, skip this.
+
+  
+
+Now we want to become the postgres super user created from the
+installer:
+
+  
+
+<span class="s4">\$ </span>sudo su - postgres
+
+<span class="s4">postgres \$ </span>psql template1
+
+<span class="s4">template1=\# </span>CREATE USER okraapp WITH PASSWORD
+’<span class="s5">***yourStandardPassword***</span>’;
+
+<span class="s4">template1=\# </span>CREATE DATABASE
+okraapp\_development WITH OWNER = postgres;
+
+<span class="s4">template1=\# </span>GRANT ALL PRIVILEGES ON DATABASE
+okraapp\_development to okraapp;
+
+<span class="s4">template1=\# </span>CREATE DATABASE okraapp\_test WITH
+OWNER = postgres;
+
+<span class="s4">template1=\# </span>GRANT ALL PRIVILEGES ON DATABASE
+okraapp\_test to okraapp;
+
+template1=\# <span class="s6">\\q</span>
+
+postgres \$ <span class="s6">exit</span>
+
+  
+
+Edit config/database.yml
+
+You need to open config/database.yml and add in your standard password
+for the <span class="s1">password:</span> field under
+<span class="s1">development:</span> and <span class="s1">test:</span>
+
+  
+
+<span class="s4">\$ </span>rake db:migrate
+
+  
+
+<span class="s7">if you see a bunch of output like the following you
+win!</span>
+
+  
+
+==<span class="Apple-converted-space">  </span>AddAttachments: migrating
+=================================================
+
+– add\_column(:notifications, :attachment, :string)
+
+<span class="Apple-converted-space">   </span>-\> 0.0018s
+
+==<span class="Apple-converted-space">  </span>AddAttachments: migrated
+(0.0029s) ========================================
+
+  
+
+==<span class="Apple-converted-space">  </span>CreateMessagesTable:
+migrating ============================================
+
+  
+
+And finally run <span class="s1">**rails server**</span> and go to
+localhost:3000 (or <span class="s8">open http://localhost:3000</span>)
+you should see an app running! Congrats!
+
+  
+
+<span class="s9">Problems with </span><span class="s10">rake
+db:migrate</span><span class="s7"><span class="Apple-converted-space" truncated! please download pandoc if you want to convert large files.>
+
+  [http://www.enterprisedb.com/products-services-training/pgdownload]: http://www.enterprisedb.com/products-services-training/pgdownload
+
+
+
+
+
 ## Features
 
 Hogan is fast--try it on your workload.
