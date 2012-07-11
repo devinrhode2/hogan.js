@@ -1,20 +1,17 @@
-The Nom Noms are coming.
+_The Nom Noms are coming._
 ------------------------------
 
 Developer Environment Configuration:
-
-    - `ruby 1.9.2`
-
-    - `rails 3.2.2`
-
-    - `gem`
+    ruby 1.9.2
+    rails 3.2.2
+    gem
 
 
 You may need to update rails with: `gem update rails`
 
-`clone` down the github repo
+**clone** down the github repo
 
-`cd` into the project directory
+**cd** into the project directory
 
 Install project gems:
 
