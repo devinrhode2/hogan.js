@@ -1,17 +1,14 @@
 _The Nom Noms are coming._
 ------------------------------
 
-Developer Environment Configuration:
+Prerequisites:
+
     ruby 1.9.2
     rails 3.2.2
-    gem
+    gem (command line)
 
 
-You may need to update rails with: `gem update rails`
-
-**clone** down the github repo
-
-**cd** into the project directory
+**clone** down the github repo, and **cd** into the project directory
 
 Install project gems:
 
@@ -21,6 +18,7 @@ Install project gems:
 - Official download: http://www.enterprisedb.com/products-services-training/pgdownload
 - During installation, use your standard system password. 
 - I renamed my install directory to /usr/local/pgsql and the data source to /usr/local/pgsql/data2. These steps probably aren't necessary. Otherwise, stick with all the defaults. At the end there may be something about another install stack thing, skip this.
+- At the end, ignore anything about install stack shield
 
 Now we want to become the postgres super user created from the installer:
 
@@ -60,7 +58,7 @@ Error:
       Referenced from: /Users/rangetutoring/.rvm/gems/ruby-1.9.2-p290/gems/pg-0.14.0/lib/pg_ext.bundle
       Reason: image not found - /Users/rangetutoring/.rvm/gems/ruby-1.9.2-p290/gems/pg-0.14.0/lib/pg_ext.bundle
 
-–You need to install postgres silly, that's step one.
+_You need to install postgres silly, that's step one._
 
 Error:
 
@@ -69,7 +67,7 @@ Error:
     Tasks: TOP => db:migrate => environment
     (See full trace by running task with --trace)
 
-–You need to open config/database.yml and add in your standard password for the password: value
+_You need to open config/database.yml and add in your standard password for the password: value_
 
 Error:
 
@@ -78,7 +76,7 @@ Error:
     Tasks: TOP => db:migrate => environment
     (See full trace by running task with --trace)
 
-–You probably don't have the database user created. I think.
+_You probably don't have the database user created. I think._
 
 Error:
 
@@ -87,4 +85,4 @@ Error:
     Tasks: TOP => db:migrate => environment
     (See full trace by running task with --trace)
 
-–Clearly, you need to create the database. It's probably best to copy/past commands to avoid typos and syntax errors.
+_Clearly, you need to create the database. It's probably best to copy/past commands to avoid typos and syntax errors._
