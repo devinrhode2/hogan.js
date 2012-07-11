@@ -8,7 +8,7 @@ Prerequisites:
     gem (command line)
 
 
-**clone** down the github repo, and **cd** into the project directory
+**clone** down the github repo, and then **cd** into the project directory
 
 Install project gems:
 
