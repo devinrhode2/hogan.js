@@ -40,12 +40,16 @@ Finish off the database stuff:
 
 if you see a bunch of output like the following you win!
 
+      ...
+      
     ==  AddAttachments: migrating =================================================
     -- add_column(:notifications, :attachment, :string)
        -> 0.0018s
     ==  AddAttachments: migrated (0.0029s) ========================================
     
     ==  CreateMessagesTable: migrating ============================================
+    
+      ...
 
 And finally run rails server and go to localhost:3000 (or open http://localhost:3000) you should see an app running! Congrats!
 
