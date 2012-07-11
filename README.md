@@ -32,8 +32,7 @@ Now we want to become the postgres super user created from the installer:
     template1=# \q
     postgres $ exit
 
-**Edit config/database.yml**
-You need to open config/database.yml and add in your standard password for the password: field under both development: and test:
+**Edit config/database.yml** add in your standard password for the password: field under both development: and test:
 
 Finish off the database stuff:
 
