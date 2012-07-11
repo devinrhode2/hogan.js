@@ -53,17 +53,17 @@ if you see a bunch of output like the following you win!
 
 And finally run rails server and go to localhost:3000 (or open http://localhost:3000) you should see an app running! Congrats!
 
-Problems with `rake db:migrate`
+Got an error with `rake db:migrate`? Check if it's below.
 
-Error:
+- Error:
 
     -dlopen(/Users/rangetutoring/.rvm/gems/ruby-1.9.2-p290/gems/pg-0.14.0/lib/pg_ext.bundle, 9): Library not loaded: /usr/lib/libpq.5.dylib
       Referenced from: /Users/rangetutoring/.rvm/gems/ruby-1.9.2-p290/gems/pg-0.14.0/lib/pg_ext.bundle
       Reason: image not found - /Users/rangetutoring/.rvm/gems/ruby-1.9.2-p290/gems/pg-0.14.0/lib/pg_ext.bundle
 
-_You need to install postgres silly, that's step one._
+ _You need to install postgres silly, that's step one._
 
-Error:
+- Error:
 
     fe_sendauth: no password supplied
     
@@ -72,7 +72,7 @@ Error:
 
 _You need to open config/database.yml and add in your standard password for the password: value_
 
-Error:
+- Error:
 
     FATAL:  password authentication failed for user "okraapp"
     
@@ -81,7 +81,7 @@ Error:
 
 _You probably don't have the database user created. I think._
 
-Error:
+- Error:
 
     FATAL:  database "okraapp_development" does not exist
     
